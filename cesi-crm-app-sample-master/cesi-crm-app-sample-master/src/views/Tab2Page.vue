@@ -85,8 +85,10 @@ export default defineComponent({
     getContacts() {
       this.contacts = contactQuery.getContacts();
     },
-    deleteContact: function(index) {
+    deleteContact(index) {
+      this.contacts = contactQuery.getContacts();
       this.contacts.splice(index, 6);
+      this.getContacts();
     }/*,
     updateContact() {
       const contact: Contact = this.contactForm;
