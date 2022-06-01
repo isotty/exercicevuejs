@@ -22,8 +22,7 @@
           <ion-input placeholder="Nom" required="true" v-model="contactForm.name" clear-input value=""></ion-input>
           <ion-input placeholder="Prénom" required clear-input value="" v-model="contactForm.firstname"></ion-input>
           <ion-input placeholder="Entreprise" required clear-input value="" v-model="contactForm.company"></ion-input>
-          <ion-input placeholder="Numéro de téléphone" required clear-input value="" v-model="contactForm.phoneNumber">
-          </ion-input>
+          <ion-input placeholder="Numéro de téléphone" required clear-input value="" v-model="contactForm.phoneNumber"></ion-input>
           <ion-input placeholder="Adresse" required clear-input value="" v-model="contactForm.address"></ion-input>
           <ion-input placeholder="Email" required clear-input value="" v-model="contactForm.email"></ion-input>
           <ion-input placeholder="Note" required clear-input value="" v-model="contactForm.note"></ion-input>

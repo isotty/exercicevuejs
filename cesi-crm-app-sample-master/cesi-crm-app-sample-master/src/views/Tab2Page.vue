@@ -21,29 +21,29 @@
         <ion-accordion-group>
           <ion-accordion value="colors">
             <ion-item slot="header">
-              <ion-label>Nom : . {{ contact.name }}</ion-label>
+              <ion-label>Nom : {{ contact.name }}</ion-label>
             </ion-item>
               <ion-list slot="content">
               <ion-item>
-                <ion-label>Nom : . {{ contact.name }}</ion-label>
+                <ion-label>Nom : {{ contact.name }}</ion-label>
               </ion-item>
               <ion-item>
-                <ion-label>Prénom : . {{ contact.firstname }}</ion-label>
+                <ion-label>Prénom : {{ contact.firstname }}</ion-label>
               </ion-item>
               <ion-item>
-                <ion-label>Adresse : . {{ contact.address }}</ion-label>
+                <ion-label>Adresse : {{ contact.address }}</ion-label>
               </ion-item>
               <ion-item>
-                <ion-label>Entreprise : . {{ contact.company }}</ion-label>
+                <ion-label>Entreprise : {{ contact.company }}</ion-label>
               </ion-item>
               <ion-item>
-                <ion-label>Téléphone : . {{ contact.phoneNumber }}</ion-label>
+                <ion-label>Téléphone : {{ contact.phoneNumber }}</ion-label>
               </ion-item>
               <ion-item>
-                <ion-label>Email : . {{ contact.email }}</ion-label>
+                <ion-label>Email : {{ contact.email }}</ion-label>
               </ion-item>
               <ion-item>
-                <ion-label>Note : . {{ contact.note }}</ion-label>
+                <ion-label>Note : {{ contact.note }}</ion-label>
               </ion-item>
               <ion-item>
                 <ion-label>
@@ -68,7 +68,7 @@ import { defineComponent } from 'vue';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
 import contactQuery from '../query/contact.query';
 import { Contact } from '../domains/contact.interface';
-import contactCommand from '../commands/contact.command';
+//import contactCommand from '../commands/contact.command';
 
 export default defineComponent({
   name: 'Tab2Page',
@@ -86,13 +86,12 @@ export default defineComponent({
       this.contacts = contactQuery.getContacts();
     },
     deleteContact(index) {
-      this.contacts = contactQuery.getContacts();
-      this.contacts.splice(index, 6);
+      this.contacts.splice(this.contacts.index, 6);
       this.getContacts();
     }/*,
-    updateContact() {
-      const contact: Contact = this.contactForm;
-      contactCommand.updateContacts(contact);
+    updateContact(index) {
+      this.contacts.splice(index, 6, );
+      this.getContacts();      
     }*/
 }});
 </script>
